@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator App</title>
+  <style>
+    /* CSS code for calculator layout */
+    body {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    }
+    
+    .calculator {
+      width: 500px;
+      background-color: #f1f1f1;
+      border: 1px solid #d11717;
+      padding: 10px;
+      margin: 0 auto;
+    }
+    
+    .calculator input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .calculator button {
+      width: 48%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" disabled>
+    <button onclick="clearInput()">C</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('/')">/</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('.')">.</button>
+      </div>
+  
+  <script>
+    // JavaScript code for calculator functionality
+    function appendValue(value) {
+      document.getElementById('result').value += value;
+    }
+    
+    function clearInput() {
+      document.getElementById('result').value = '';
+    }
+    
+    function calculate() {
+      var input = document.getElementById('result').value;
+      var result = eval(input);
+      document.getElementById('result').value = result;
+    }
+  </script>
+</body>
+</html>
